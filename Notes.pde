@@ -51,3 +51,9 @@
 // 6. the "super" keyword in java refrences the parent class. //
 // 7. To call or use functions/variables from a parent class within a child class, we use 
 //    super.functionName() / super.variableName to reference them. //
+
+// Taken on 1/24
+// ?: Ternary Condition Operator / if you want to assign a variable based on a condition, you use this operator / : is the condition //
+// variable = condition ? a : b;
+// Value "a" will be assigned to "variable" if condition is true.
+// Value "b" will be assigned to "variable" if condition is false.
