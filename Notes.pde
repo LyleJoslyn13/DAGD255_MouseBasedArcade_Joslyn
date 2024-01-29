@@ -22,8 +22,8 @@
 //    x - coordinate - is a single variable
 //    y - coordinate - is a single variable
 
-// 2D VECTOR is a STRUCTURE made up of 2 variables
 
+// 2D VECTOR is a STRUCTURE made up of 2 variables
 
 
 // CHARACTER - Structure
@@ -37,6 +37,8 @@
 //    Move Speed - Float
 //    Job - String (Structure)
 //    Jump Height - Float
+
+
 
 // TAKEN ON 1/17
 // 1. use the keyword "extends" to esatblish a parent child relationship between classes. //
@@ -52,8 +54,12 @@
 // 7. To call or use functions/variables from a parent class within a child class, we use 
 //    super.functionName() / super.variableName to reference them. //
 
+
+
 // Taken on 1/24
 // ?: Ternary Condition Operator / if you want to assign a variable based on a condition, you use this operator / : is the condition //
 // variable = condition ? a : b;
 // Value "a" will be assigned to "variable" if condition is true.
 // Value "b" will be assigned to "variable" if condition is false.
+
+// floor() rounds down, ceil() rounds up, round() rounds to closest value 

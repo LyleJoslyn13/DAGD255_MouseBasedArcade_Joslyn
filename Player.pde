@@ -25,7 +25,7 @@ class Player extends RadialObject {  // *extends* code makes RadialObject a pare
     if(leftPressed && !pLeftPressed) {
      calcAngle(mouseX, mouseY); 
      Rocket r = new Rocket(position.x, position.y, angle); 
-     rockets.add(r);
+     scenePlay.rockets.add(r);
     }
     
     float dx = mouseX - position.x;
