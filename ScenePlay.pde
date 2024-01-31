@@ -5,7 +5,7 @@ class ScenePlay {
 
   ArrayList<Rocket> rockets = new ArrayList();
   ArrayList<Enemy> enemies = new ArrayList();
-  ArrayList<Particle> particlse = new Arraylist();
+  ArrayList<Particle> particles = new ArrayList();
 
   float enemySpawnCD = 2;
 
@@ -31,8 +31,7 @@ class ScenePlay {
       enemySpawnCD = random(0.5, 1);
     }
     
-    Particle p = newParticle(player.position.x, player.position.y);
-    particles.add(p);
+    
 
     // UPDATE ALL OBJECTS UNDER THIS LINE
 
@@ -57,14 +56,23 @@ class ScenePlay {
         if (r.checkCollision(enemies.get(j))) {    // Collision code for rocket with enemies //
           r.isDead = true;
           enemies.get(j).isDead = true;
+          
+           int numParticles = (int)random(25,50);
+            for(int k = 0; k< numParticles; k++) {
+              Particle p = new Particle(r.position.x, r.position.y);
+              p.angle = radians(random(359));
+              p.velocity = new PVector(random(300,500), random(300, 500));
+              p.friction = 0.98;
+              particles.add(p);
+            }
         }
       }
 
       if (r.isDead) rockets.remove(r);
     }
 
- for (int i = 0; i < enemies.size(); i++) {      // updates enemy information //
-      Particles pa = articles.get(i);
+ for (int i = 0; i < particles.size(); i++) {      // updates enemy information //
+      Particle pa = particles.get(i);
       pa.update();
 
     if(pa.isDead) particles.remove(pa);
@@ -88,13 +96,14 @@ class ScenePlay {
       r.draw();
     }
 
- for (int i = 0; i < enemies.size(); i++) {      // updates enemy information //
-      Particles pa = particles.get(i);
+ for (int i = 0; i < particles.size(); i++) {      // updates enemy information //
+      Particle pa = particles.get(i);
       pa.draw();
-
+}
     player.draw();    // ALWAYS UPDATE PLAYER LAST!!!!! //
 
     textSize(20);
     text("Game Time: " + gTime, width/2, 50);
-  }
+  
+}
 }

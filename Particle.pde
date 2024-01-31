@@ -9,21 +9,24 @@ class Particle {
   float rotateSpeed;
   float lifeTime;      // How long the sprite will exist //
   float size;
+  float friction = 1;
   
   float r, g, b;        // Aesthetic looks //
   float alpha;
- 
+
   boolean isDead = false;
  
   Particle(float x, float y) {
     position = new PVector(x, y);
     velocity = new PVector(random(-150, 150), - 300);
     
-    angle = PI/2; 
+    angle = radians(random(250, 290)); 
     rotateAngle = radians(random(359));
     lifeTime = random(0.5, 1.5);
     alpha = random(128, 255);
-    r = g = b = random(200);
+    r = random(100, 250);
+    g = random(100);
+    b = 0;
     rotateSpeed = radians(random(-90, 90));
     size = random(8, 16);
   }
@@ -37,13 +40,17 @@ class Particle {
     
     rotateAngle += rotateSpeed * dt;
     
-    position.x += velocity.x * dt;
-    position.y += velocity.y * dt;
+    velocity.x *= friction;
+    velocity.y *= friction;
+    
+    position.x += velocity.x * cos(angle) * dt;
+    position.y += velocity.y * sin(angle) * dt;
     
     if(alpha <= 0) isDead = true;
   }
   
   void draw() {
+    noStroke();
     fill(r, g, b, alpha);
     pushMatrix();
     translate(position.x, position.y);

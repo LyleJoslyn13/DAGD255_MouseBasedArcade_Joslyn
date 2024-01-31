@@ -1,3 +1,10 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 // This program plays a mouse based arcade game. //
 // Copyright Lyle Joslyn 2024 //
 // Left Click - 
@@ -7,6 +14,8 @@
 SceneTitle sceneTitle;
 ScenePlay scenePlay;
 SceneGameOver sceneGameOver;
+
+Minim minim
 
 float dt;
 float prevTime;
@@ -18,6 +27,7 @@ boolean rightPressed, pRightPressed;
 void setup(){          // This Function is called upon launch, and is called only once. //
   size(1280, 720);    // Sets the size of the window // 
   switchToTitle();
+  minim = new Minim(this);
 }
 
 void draw() {         // This function is  called every frame. // 

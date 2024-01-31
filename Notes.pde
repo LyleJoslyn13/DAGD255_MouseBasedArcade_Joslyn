@@ -63,3 +63,16 @@
 // Value "b" will be assigned to "variable" if condition is false.
 
 // floor() rounds down, ceil() rounds up, round() rounds to closest value 
+
+
+// taken on 1/31
+// steps to spawn eneimes on other sides of screen and follow player
+// 1. roll random number.
+// 2. if the number is between 0-0.24 = spawn on left side
+//     else if the number is between 0.25-0.49 = spawn on the top
+//      else if the number is between 0.5-0.74 = spawn on the right
+//       else if the the number is between 0.75-0.99 
+// 3. if left - x = -50; y = random(height);
+//    if top - x = random(width; y = -50;
+// 4. update - CalcAngleToPlayer.
+// 5. update - Move enemies using the angle.

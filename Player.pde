@@ -46,5 +46,4 @@ class Player extends RadialObject {  // *extends* code makes RadialObject a pare
     fill(#1FEA86);
     ellipse(position.x, position.y, radius*2, radius*2);
   }
-  
 }
