@@ -1,20 +1,20 @@
-class Enemy extends RadialObject { 
-
-  int enemyType = 0
+class PowerUp extends RadialObject { 
   
-  Enemy() {
+  int powerType = 0;
+  
+  PowerUp() { 
     position = new PVector();
     position.x = random(width); 
     position.y = -50;
     
-    radius = 50;
+    radius = 25;
     
-    velocity = new PVector(0, random(200, 300));
+    velocity = new PVector(0, random(50, 200));
     
     int rand = (int)random(0, 3);
-    enemyType = rand;
+    powerType = rand;
     
-    //switch(enemyType) {          // changes sprite
+//switch(powerType) {          // changes sprite
 //    case 0:
 //      img = loadImage();
 //      break;
@@ -26,11 +26,10 @@ class Enemy extends RadialObject {
 //    case 2:
 //      img = loadImage();
 //      break;
-    
+
   }
   
   void update() {
-    
     position.x += velocity.x * dt;
     position.y += velocity.y * dt;
     
@@ -39,11 +38,7 @@ class Enemy extends RadialObject {
   }
   
   void draw() {
-    fill(#FF74B0);
-    // how to set sprite with collision
-    // rect(position.x - radius, position.y - radius, radius*2, radius*2);
+    fill(#0000FF);
     ellipse(position.x, position.y, radius*2, radius*2);
-    
   }
-  
 }

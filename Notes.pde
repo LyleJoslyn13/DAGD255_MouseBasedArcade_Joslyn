@@ -76,3 +76,62 @@
 //    if top - x = random(width; y = -50;
 // 4. update - CalcAngleToPlayer.
 // 5. update - Move enemies using the angle.
+
+// pixilart.com
+
+
+//TAKEN ON 2/5
+
+// COLOR STUFF
+//class enemy {     
+  
+//  float hue
+
+// enemy(){
+// 
+//  }
+
+//void update(){
+//  hue = map(speed, 0, 300, 0, 256);
+//   }
+
+//void draw(){
+//  fill(hue, 255, 255)
+//  }
+//}
+
+
+//POWER UP TYPES + POWERUP SETUP
+//class PowerUp
+
+//int powerType = 0 // 0 = slowdown, 1 = small enemys
+//PowerUp() {
+//   int rand = (int)random(0, 3);
+//   powerType = rand;
+
+//switch(powerType) {          // changes sprite
+//    case 0:
+//      img = loadImage();
+//      break;
+//
+//    case 1:
+//      img = loadImage();
+//      break;
+
+//    case 2:
+//      img = loadImage();
+//      break;
+// }
+//
+//for (int i = 0; i <powerUps.size(); i++) {
+  
+//   if p.checkCollision(player)){
+//      if(p.powerType == 0) {
+//    }
+//      else if(p.powerType == 1) {
+//    }
+//      else if(p.powerType == 2) {
+//    }
+// 
+//   p.isDead
+// }

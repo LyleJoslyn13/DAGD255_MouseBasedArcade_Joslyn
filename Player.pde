@@ -9,6 +9,7 @@ class Player extends RadialObject {  // *extends* code makes RadialObject a pare
     position = new PVector(); // creates a zero vector (0,0) // 
     position.x = width/2;
     position.y = 600;
+    //PLAYER SPRITE HERE 
   }
   
   void update() {

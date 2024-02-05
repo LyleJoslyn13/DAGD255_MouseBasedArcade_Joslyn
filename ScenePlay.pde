@@ -6,8 +6,10 @@ class ScenePlay {
   ArrayList<Rocket> rockets = new ArrayList();
   ArrayList<Enemy> enemies = new ArrayList();
   ArrayList<Particle> particles = new ArrayList();
+  ArrayList<PowerUp> powerUps = new ArrayList(); 
 
   float enemySpawnCD = 2;
+  float powerUpSpawnCD = 5;      //random(15, 25);
 
   float gameTime = 0;
 
@@ -31,15 +33,48 @@ class ScenePlay {
       enemySpawnCD = random(0.5, 1);
     }
     
+    powerUpSpawnCD -= dt;        // Spawn powerup code //
+    if (powerUpSpawnCD <= 0) {
+      PowerUp pu = new PowerUp();
+      powerUps.add(pu);
+      powerUpSpawnCD = random(15, 25);
+    }
     
 
     // UPDATE ALL OBJECTS UNDER THIS LINE
+    
+    for (int i = 0; i <powerUps.size(); i++) {
+      PowerUp pu = powerUps.get(i);
+      pu.update();
+      
+      if(pu.checkCollision(player)){
+         if(pu.powerType == 0) {
+           
+          }
+         else if(pu.powerType == 1) {
+           
+          }
+         else if(pu.powerType == 2) {
+           
+          }
+ 
+       pu.isDead = true;
+     }
+     if (pu.isDead) powerUps.remove(i);
+    }
 
     for (int i = 0; i < enemies.size(); i++) {      // updates enemy information //
       Enemy e = enemies.get(i);
       e.update();
 
       if (e.checkCollision(player)) {
+//      if(e.enemyType == 0) {
+//    }
+//      else if(e.enemyType == 1) {
+//    }
+//      else if(e.enemyType == 2) {
+//    }
+
         e.isDead = true;
         switchToGameOver();
       }
@@ -64,7 +99,7 @@ class ScenePlay {
               p.velocity = new PVector(random(300,500), random(300, 500));
               p.friction = 0.98;
               particles.add(p);
-            }
+          }
         }
       }
 
@@ -94,6 +129,11 @@ class ScenePlay {
     for (int i = 0; i < rockets.size(); i++) {
       Rocket r = rockets.get(i);
       r.draw();
+    }
+    
+    for (int i = 0; i < powerUps.size(); i++) {
+      PowerUp pu = powerUps.get(i);
+      pu.draw();
     }
 
  for (int i = 0; i < particles.size(); i++) {      // updates enemy information //
