@@ -6,6 +6,8 @@ class RadialObject {  // Declares a new class //
   boolean isDead;
   float angle;
   
+  int radiusChange = 50;
+  
   RadialObject() {    // Declares a new function //
   
   }

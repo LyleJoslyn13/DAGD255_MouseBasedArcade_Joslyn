@@ -11,11 +11,11 @@ class SceneGameOver {
   }
   
   void draw(){
-    background(255, 0, 0);
-    textAlign(LEFT, TOP);
-    text("Click to return to the main menu", 10, 20);
+    background(#972020);
     textAlign(CENTER, CENTER);
+    fill(#FFFFFF);
     text("GAME OVER", width/2, height/2);
+    text("Click to Try Again", width/2 + 20, height/2 + 20);
   }
   
 

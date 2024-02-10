@@ -4,7 +4,7 @@ class Rocket extends RadialObject {
    position = new PVector(x, y);
    radius = 8;
    
-   velocity = new PVector(800, 800);
+   velocity = new PVector(200, 200);
    
    this.angle = angle; // this. calls context to the varibale used in this class, not the parent //
  }

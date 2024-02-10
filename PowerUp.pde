@@ -1,6 +1,6 @@
 class PowerUp extends RadialObject { 
   
-  int powerType = 0;
+  int powerType;
   
   PowerUp() { 
     position = new PVector();
@@ -38,7 +38,15 @@ class PowerUp extends RadialObject {
   }
   
   void draw() {
+    if(powerType == 0){
+      fill(#FFFF00);
+    }
+    else if(powerType == 1){
+      fill(#00ff00);
+    }
+    else if(powerType == 2){
     fill(#0000FF);
+    }
     ellipse(position.x, position.y, radius*2, radius*2);
   }
 }

@@ -1,8 +1,16 @@
 // This program plays a mouse based arcade game. //
 // Copyright Lyle Joslyn 2024 //
-// Left Click - 
-// Right Click - 
+// Sprites by: Lyle Joslyn
+// Main Menu Music by: Yann van der Cruyssen - Stray Main Menu Theme // www.youtube.com/watch?v=37wUUn748iQ
+// Shooting Sound by: YT - Gunshot Sound Effect Single Shot // www.youtube.com/watch?v=lGNwnstqAO4
+// Player Death Sound by: Fortnite - Fortnite Teamate Down Sound Effect // www.youtube.com/watch?v=-JlvjLvWKfQ
+// Power Up Sound by: Super Mario Bros - MARIO POWER UP SOUND EFFECT // www.youtube.com/watch?v=Qs88-6800bA
 
+// CONTROLS
+// Left Click - Shoots
+// Mouse Cursor - Aims and Moves Player Character
+
+// Player Goal: Stay Alive as long as possible
 
 
 // SOUND FX LIBARY
@@ -20,6 +28,12 @@ ScenePlay scenePlay;
 SceneGameOver sceneGameOver;
 
 Minim minim;
+AudioPlayer Audio;
+AudioPlayer Shoot;
+AudioPlayer Death;
+AudioPlayer PowerUp;
+
+
 
 float dt;
 float prevTime;
@@ -31,8 +45,15 @@ boolean rightPressed, pRightPressed;
 void setup(){          // This Function is called upon launch, and is called only once. //
   size(1280, 720);    // Sets the size of the window // 
   // colorNode(HSB);  // changes the input for color //
+  
   switchToTitle();
+  
   minim = new Minim(this);
+  Shoot = minim.loadFile("Gunshot.mp3");
+  Audio = minim.loadFile("Stray - Main Menu Music.mp3");
+  Death = minim.loadFile("Death.mp3");
+  PowerUp = minim.loadFile("MARIO.mp3");
+  Audio.loop();
 }
 
 void draw() {         // This function is  called every frame. // 

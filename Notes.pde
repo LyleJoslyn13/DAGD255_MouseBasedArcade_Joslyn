@@ -77,6 +77,34 @@
 // 4. update - CalcAngleToPlayer.
 // 5. update - Move enemies using the angle.
 
+
+
+
+
+
+//float spawnLocation = random(0, 1);
+
+//if(spawnLocation =< .33) {
+//  position.x = width + radius;
+//  position.y = random(400, height);
+//}
+//if(spawnLocation =< .66 && spawnLocation > .33){
+//  position.x = 0 - radius;
+//  position.y = random(400, height);
+//}
+//if(spawnLocation =< 1 && spawnLocation > .66) {
+//  position.x = random(width);
+//  position.y = height - radius;
+//}
+
+//calcAngle(player.position.x, player.position.y)
+
+
+
+
+
+
+
 // pixilart.com
 
 

@@ -1,20 +1,23 @@
 class Enemy extends RadialObject { 
 
-  int enemyType = 0
+  
+  PImage enemySprite1;
+  PImage enemySprite2;
+  
+  
   
   Enemy() {
     position = new PVector();
     position.x = random(width); 
-    position.y = -50;
+    position.y = -radius;
     
     radius = 50;
     
     velocity = new PVector(0, random(200, 300));
     
-    int rand = (int)random(0, 3);
-    enemyType = rand;
+    // SEE ATTACHED FILE ON ENEMY TYPES 
     
-    //switch(enemyType) {          // changes sprite
+    //switch(enemyType) {          // changes sprite 
 //    case 0:
 //      img = loadImage();
 //      break;
@@ -27,6 +30,8 @@ class Enemy extends RadialObject {
 //      img = loadImage();
 //      break;
     
+    
+    enemySprite1 = loadImage("pixil-frame-1.png");
   }
   
   void update() {
@@ -42,7 +47,8 @@ class Enemy extends RadialObject {
     fill(#FF74B0);
     // how to set sprite with collision
     // rect(position.x - radius, position.y - radius, radius*2, radius*2);
-    ellipse(position.x, position.y, radius*2, radius*2);
+    
+    image(enemySprite1, position.x-50, position.y-45);
     
   }
   

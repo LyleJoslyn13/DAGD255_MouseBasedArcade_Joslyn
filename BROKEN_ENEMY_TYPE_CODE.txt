@@ -1,0 +1,41 @@
+switch(enemyType) {          // changes enemy based on enemyType
+    case 0:
+      radius = 50;
+      position.x = random(width); 
+      position.y = -50;
+      
+      break;
+
+   case 1:
+      radius = 50;
+      position.x = -50;
+      position.y = random(500, height-50);
+      
+      break;
+
+    case 2:
+    // see notes 
+      break;
+    }
+
+
+// UPDATE
+switch(enemyType) {          // changes enemy behavior based on enemyType
+    case 0:
+      position.x += velocity.x * dt;
+      position.y += velocity.y * dt;
+      break;
+
+   case 1:
+      position.x += velocity.x * dt;
+      position.y += velocity.y * dt;
+      break;
+
+    case 2:
+    // see notes
+      
+      break;
+    }
+    
+    
+  
